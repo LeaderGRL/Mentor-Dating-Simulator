@@ -76,7 +76,13 @@ public class MainView extends VBox {
             @Override
             public void handle(KeyEvent event) {
                 if (event.getCode() == KeyCode.ENTER) {
-                    System.out.println(GetText());
+                    try {
+                        Gpt4ApiCaller caller = new Gpt4ApiCaller();
+                        caller.callApi(textArea.getText());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    
                 }
             }
         });
