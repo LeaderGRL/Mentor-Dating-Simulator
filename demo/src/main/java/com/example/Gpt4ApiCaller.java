@@ -13,6 +13,7 @@ import com.google.gson.Gson;
 public class Gpt4ApiCaller {
 
     private String response;
+    private String prompt;
     private List<String> messages = new ArrayList<String>();
 
     public Gpt4ApiCaller() throws Exception{
@@ -23,6 +24,8 @@ public class Gpt4ApiCaller {
     }
 
     public void callApi(String text) throws Exception{
+        this.prompt = text;
+
         HttpClient client = HttpClient.newHttpClient();
 
         messages.add("{ \"role\": \"user\", \"content\": \"" + text.trim() + "\" }");
@@ -44,6 +47,7 @@ public class Gpt4ApiCaller {
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
         messages.add(getJsonMessageFromResponse(response.body()));
+        this.response = getContentFromResponse(response.body());
 
         System.out.println(getContentFromResponse(response.body()));
         //this.response = getJsonMessageFromResponse(response.body());
@@ -54,6 +58,10 @@ public class Gpt4ApiCaller {
 
     public String getResponse() {
         return this.response;
+    }
+
+    public String getPrompt() {
+        return this.prompt;
     }
 
     public String getContentFromResponse(String jsonResponse) {

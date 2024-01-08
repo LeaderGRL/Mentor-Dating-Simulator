@@ -10,6 +10,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.collections.ObservableList;
 import javafx.scene.image.Image;
@@ -24,6 +25,8 @@ public class MainView extends VBox {
     
     private Scene scene;
     private TextArea textArea;
+    private VBox newTextBox;
+    private ScrollPane scrollPane;
     private Gpt4ApiCaller caller;
 
     public MainView(double spacing) throws FileNotFoundException
@@ -51,13 +54,32 @@ public class MainView extends VBox {
         textArea.setMaxWidth(300);
         textArea.setWrapText(true);
 
-        VBox newTextBox = new VBox();
+        newTextBox = new VBox();
         newTextBox.setAlignment(javafx.geometry.Pos.CENTER_LEFT);
-        newTextBox.setPrefWidth(300);
-        newTextBox.setMaxWidth(300);
+        newTextBox.setPrefWidth(250);
+        newTextBox.setMaxWidth(250);
         newTextBox.setSpacing(10);
-        newTextBox.getChildren().add(new Label("JP :"));
-        newTextBox.setStyle("-fx-padding: 10;" + "-fx-border-style: solid inside;" + "-fx-border-width: 2;" + "-fx-border-insets: 5;" + "-fx-border-radius: 5;" + "-fx-border-color: blue;");
+        //newTextBox.getChildren().add(new Label("Hello, I'm Jean-Philippe, a mentor at Lyon Ynov Campus. I'm an IT expert. I have a very high ego. I ate my food without sauce. I must go to the toilet every 5 minutes. I'm funny. I'm from portugal. I'm fan of Cristiano Ronaldo. I should act like if I'm in a date but I'm not an easy guy"));
+        //newTextBox.setStyle("-fx-padding: 10;" + "-fx-border-style: solid inside;" + "-fx-border-width: 2;" + "-fx-border-insets: 5;" + "-fx-border-radius: 5;" + "-fx-border-color: blue;");
+
+        scrollPane = new ScrollPane();
+        scrollPane.setPrefHeight(100);
+        scrollPane.setPrefWidth(250);
+        scrollPane.setMaxHeight(100);
+        //scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+        // scrollPane.setFitToHeight(true);
+        // scrollPane.setFitToWidth(true);
+        scrollPane.setContent(newTextBox);
+
+        
+        VBox scrollPaneContainer = new VBox();
+        scrollPaneContainer.setAlignment(javafx.geometry.Pos.CENTER);
+        scrollPaneContainer.setPrefHeight(100);
+        scrollPaneContainer.setPrefWidth(300);
+        scrollPaneContainer.setMaxHeight(100);
+        scrollPaneContainer.setMaxWidth(javafx.scene.layout.Region.USE_PREF_SIZE);
+        scrollPaneContainer.getChildren().add(scrollPane);
+
 
         VBox centerVbox = new VBox();
         centerVbox.setSpacing(10);
@@ -66,7 +88,7 @@ public class MainView extends VBox {
 
         centerVbox.setAlignment(javafx.geometry.Pos.CENTER);
         centerVbox.getChildren().add(imageView);
-        centerVbox.getChildren().add(newTextBox);
+        centerVbox.getChildren().add(scrollPaneContainer);
         centerVbox.getChildren().add(textArea);
 
         // BorderPane borderPane = new BorderPane(); // BorderPane is a layout manager that manages nodes in top, bottom, left, right, and center positions
@@ -76,7 +98,7 @@ public class MainView extends VBox {
 
 
         VBox vbox = new VBox(centerVbox);
-        scene = new Scene(vbox, 500, 400);
+        scene = new Scene(vbox, 500, 900);
 
 
         textArea.setOnKeyPressed(new EventHandler<KeyEvent>() {
@@ -85,6 +107,8 @@ public class MainView extends VBox {
                 if (event.getCode() == KeyCode.ENTER) {
                     try {
                         caller.callApi(textArea.getText());
+                        displayPrompt();
+                        displayResponse();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -94,6 +118,21 @@ public class MainView extends VBox {
         });
 
         //components.addAll(imageView);
+    }
+
+    private void displayPrompt()
+    {
+        Label prompt = new Label("You : " + textArea.getText());
+        prompt.setWrapText(true);
+        newTextBox.getChildren().add(prompt);
+        textArea.clear();
+    }
+
+    private void displayResponse()
+    {
+        Label response = new Label("JP : " + caller.getResponse());
+        response.setWrapText(true);
+        newTextBox.getChildren().add(response);
     }
 
     public Scene GetScene()
