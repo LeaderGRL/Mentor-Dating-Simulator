@@ -24,13 +24,20 @@ public class MainView extends VBox {
     
     private Scene scene;
     private TextArea textArea;
+    private Gpt4ApiCaller caller;
 
     public MainView(double spacing) throws FileNotFoundException
     {
         super(spacing);
 
         //ObservableList components = this.getChildren();
-
+        try {
+            caller = new Gpt4ApiCaller();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        
         URL imageURL = App.class.getResource("images/JP.jpg");
         Image image = new Image(imageURL.toString());
         ImageView imageView = new ImageView(image);
@@ -77,7 +84,6 @@ public class MainView extends VBox {
             public void handle(KeyEvent event) {
                 if (event.getCode() == KeyCode.ENTER) {
                     try {
-                        Gpt4ApiCaller caller = new Gpt4ApiCaller();
                         caller.callApi(textArea.getText());
                     } catch (Exception e) {
                         e.printStackTrace();
