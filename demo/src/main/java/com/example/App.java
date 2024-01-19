@@ -23,6 +23,7 @@ public class App extends Application {
     public void start(Stage stage) throws IOException { // Must have function in JavaFX
         MainView mainView = new MainView(20.0);
         //mainViewScene = new Scene(mainView);
+        stage.initStyle(javafx.stage.StageStyle.UNDECORATED);
         stage.setScene(mainView.GetScene());
         stage.show();
     }

@@ -1,13 +1,15 @@
 package com.example;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.URL;
 
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -29,7 +31,7 @@ public class MainView extends VBox {
     private ScrollPane scrollPane;
     private Gpt4ApiCaller caller;
 
-    public MainView(double spacing) throws FileNotFoundException
+    public MainView(double spacing) throws IOException
     {
         super(spacing);
 
@@ -98,8 +100,9 @@ public class MainView extends VBox {
 
 
         VBox vbox = new VBox(centerVbox);
-        scene = new Scene(vbox, 500, 900);
 
+        Parent root = FXMLLoader.load(getClass().getResource("MainView.fxml"));
+        scene = new Scene(root);
 
         textArea.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override

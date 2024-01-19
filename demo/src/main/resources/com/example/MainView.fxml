@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox prefHeight="759.0" prefWidth="295.0" style="-fx-background-color: #4d4d4d;">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-spacing: 10;">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="78.0" prefWidth="242.0" style="-fx-spacing: 10; -fx-padding: 10 0 0 10;">
+                     <children>
+                        <ImageView fitHeight="78.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/JP.png" />
+                           </image>
+                        </ImageView>
+                        <VBox alignment="CENTER_LEFT" style="-fx-spacing: 5;">
+                           <children>
+                              <Label text="Jean Philippe CAETANO" textFill="WHITE">
+                                 <font>
+                                    <Font name="Montserrat Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Mentor info" textFill="WHITE">
+                                 <font>
+                                    <Font name="☞Galano Grotesque Medium" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="295.0" style="-fx-spacing: 10; -fx-padding: 0 0 0 10;">
+                     <children>
+                        <ImageView fitHeight="78.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/Giordana.png" />
+                           </image>
+                        </ImageView>
+                        <VBox alignment="CENTER_LEFT" style="-fx-spacing: 5;">
+                           <children>
+                              <Label text="Alexandre GIORDANA" textFill="WHITE">
+                                 <font>
+                                    <Font name="Montserrat Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Mentor info" textFill="WHITE">
+                                 <font>
+                                    <Font name="☞Galano Grotesque Medium" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="295.0" style="-fx-spacing: 10; -fx-padding: 0 0 0 10;">
+                     <children>
+                        <ImageView fitHeight="78.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/LeBoss.png" />
+                           </image>
+                        </ImageView>
+                        <VBox alignment="CENTER_LEFT" style="-fx-spacing: 5;">
+                           <children>
+                              <Label text="Jordan GRILLY" textFill="WHITE">
+                                 <font>
+                                    <Font name="Montserrat Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Mentor info" textFill="WHITE">
+                                 <font>
+                                    <Font name="☞Galano Grotesque Medium" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="295.0" style="-fx-spacing: 10; -fx-padding: 0 0 0 10;">
+                     <children>
+                        <ImageView fitHeight="78.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/JP.png" />
+                           </image>
+                        </ImageView>
+                        <VBox alignment="CENTER_LEFT" style="-fx-spacing: 5;">
+                           <children>
+                              <Label text="Jean Philippe Caetano" textFill="WHITE">
+                                 <font>
+                                    <Font name="Montserrat Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Mentor info" textFill="WHITE">
+                                 <font>
+                                    <Font name="☞Galano Grotesque Medium" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="295.0" style="-fx-spacing: 10; -fx-padding: 0 0 0 10;">
+                     <children>
+                        <ImageView fitHeight="78.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/JP.png" />
+                           </image>
+                        </ImageView>
+                        <VBox alignment="CENTER_LEFT" style="-fx-spacing: 5;">
+                           <children>
+                              <Label text="Jean Philippe Caetano" textFill="WHITE">
+                                 <font>
+                                    <Font name="Montserrat Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Mentor info" textFill="WHITE">
+                                 <font>
+                                    <Font name="☞Galano Grotesque Medium" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="759.0" prefWidth="500.0" style="-fx-spacing: 10; -fx-background-color: #1d1d1d;">
+         <children>
+            <ScrollPane hbarPolicy="NEVER" maxWidth="506.0" prefHeight="664.0" prefWidth="500.0" style="-fx-background-color: #1d1d1d;" styleClass="scroll-bar" stylesheets="@Style/Scroll-bar.css">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="712.0" prefWidth="498.0" style="-fx-background-color: #1d1d1d;">
+                     <children>
+                        <Label style="-fx-min-width: 240;" textFill="WHITE" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+            <TextArea maxHeight="88.0" maxWidth="414.0" prefHeight="88.0" prefWidth="59.0" promptText="Start your date here..." style="-fx-background-radius: 10; -fx-border-radius: 30 10 0 0; -fx-max-height: 30; -fx-border-style: none; -fx-max-width: 300;" stylesheets="@Style/TextArea.css" text="ddd">
+               <styleClass>
+                  <String fx:value="viewport" />
+                  <String fx:value="text-area" />
+                  <String fx:value="scroll-pane" />
+               </styleClass>
+            </TextArea>
+         </children>
+      </VBox>
+   </children>
+</HBox>
