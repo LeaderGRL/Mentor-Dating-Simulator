@@ -1,4 +1,4 @@
-package com.example;
+package com.example.Data;
 
 public class Choice {
     public int index;

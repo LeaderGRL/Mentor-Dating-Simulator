@@ -1,0 +1,33 @@
+.text-area {
+    -fx-border-width: 2px;
+    -fx-border-radius: 10 ;
+    -fx-background-radius: 10;
+    -fx-text-fill: white;    
+}  
+
+.text-area .content {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10 ;
+    -fx-background-color: transparent;
+    -fx-border-color: white;
+}
+
+.text-area.scroll-pane { 
+    -fx-background-color: transparent;
+    -fx-border-radius: 10 ;
+    -fx-background-radius: 10;
+}
+
+/* .text-area .scroll-pane .corner {
+    -fx-background-color: transparent;
+    -fx-border-radius: 10 ;
+    -fx-background-radius: 10;
+} */
+
+.text-area .scroll-pane .viewport {
+    -fx-background-color: #1d1d1d;
+    -fx-border-wodth: 2px;
+    -fx-border-color: white;
+    -fx-border-radius: 10 ;
+    -fx-background-radius: 10;
+}
